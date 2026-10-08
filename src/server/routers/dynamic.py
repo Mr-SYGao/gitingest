@@ -36,4 +36,5 @@ async def catch_all(request: Request, full_path: str) -> HTMLResponse:
     }
     context.update(get_version_info())
 
-    return templates.TemplateResponse("git.jinja", context)
+    # return templates.TemplateResponse("git.jinja", context)
+    return templates.TemplateResponse(request=request, name="git.jinja", context=context)
